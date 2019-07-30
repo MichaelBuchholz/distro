@@ -937,6 +937,38 @@ $Foswiki::cfg{Register}{EmailFilter} = '';
 # to the Trash web.  If a Web name is not provided, the Usersweb is used.
 $Foswiki::cfg{Register}{CleanupOnRemove} = '$user,$userLeftBar';
 
+# **BOOLEAN LABEL="Login Name in HTTP-Header" EXPERT**
+# There's a Login Name in an HTTP Header field, that shall be used in the Registration form.
+$Foswiki::cfg{Register}{LoginFromHttpHdr} = $TRUE;
+
+# **STRING 40 LABEL="Name of HTTP Header Field, that holds the Login Name" DISPLAY_IF="{Register}{LoginFromHttpHdr}" EXPERT**
+# Enter the name of the Header field, that holds the Login Name.
+$Foswiki::cfg{Register}{HttpHdrLogin} = 'REMOTE_USER';
+
+# **BOOLEAN LABEL="First Name in HTTP-Header" EXPERT**
+# There's the First Name in an HTTP Header field, that shall be used in the Registration form.
+$Foswiki::cfg{Register}{FirstnameFromHttpHdr} = $FALSE;
+
+# **STRING 40 LABEL="Name of HTTP Header Field, that holds the First Name" DISPLAY_IF="{Register}{FirstnameFromHttpHdr}" EXPERT**
+# Enter the name of the Header field, that holds the First Name.
+$Foswiki::cfg{Register}{HttpHdrFirstname} = '';
+
+# **BOOLEAN LABEL="Last Name in HTTP-Header" EXPERT**
+# There's the Last Name in an HTTP Header field, that shall be used in the Registration form.
+$Foswiki::cfg{Register}{LastnameFromHttpHdr} = $FALSE;
+
+# **STRING 40 LABEL="Name of HTTP Header Field, that holds the Last Name" DISPLAY_IF="{Register}{LastnameFromHttpHdr}" EXPERT**
+# Enter the name of the Header field, that holds the Last Name.
+$Foswiki::cfg{Register}{HttpHdrLastname} = '';
+
+# **BOOLEAN LABEL="E-Mail Address in HTTP-Header" EXPERT**
+# There's the E-Mail Address in an HTTP Header field, that shall be used in the Registration form.
+$Foswiki::cfg{Register}{EmailFromHttpHdr} = $FALSE;
+
+# **STRING 40 LABEL="Name of HTTP Header Field, that holds the E-Mail Address" DISPLAY_IF="{Register}{EmailFromHttpHdr}" EXPERT**
+# Enter the name of the Header field, that holds the E-Mail Address.
+$Foswiki::cfg{Register}{HttpHdrEmail} = '';
+
 #---++ Environment
 # Control some aspects of the environment Foswiki runs within.
 
@@ -989,6 +1021,14 @@ $Foswiki::cfg{AccessibleCFG} = [
     '{Register}{NeedVerification}',
     '{Register}{RegistrationAgentWikiName}',
     '{Register}{CleanupOnRemove}',
+    '{Register}{LoginFromHttpHdr}',
+    '{Register}{HttpHdrLogin}',
+    '{Register}{FirstnameFromHttpHdr}',
+    '{Register}{HttpHdrFirstname}',
+    '{Register}{LastnameFromHttpHdr}',
+    '{Register}{HttpHdrLastname}',
+    '{Register}{EmailFromHttpHdr}',
+    '{Register}{HttpHdrEmail}',
     '{ReplaceIfEditedAgainWithin}',
     '{SandboxWebName}',
     '{ScriptSuffix}',
